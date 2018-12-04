@@ -12,7 +12,14 @@ export class MessagesComponent implements OnInit {
 
   constructor(private messageService: MessageService) { }
 
-  messages: Message[]
+  messages: Message[] = [{
+    subject: 'wow',
+    body: 'indeed',
+    read: false,
+    starred: false,
+    id: 1,
+    labels: ['dev']
+  }]
 
   ngOnInit() {
     this.getMessages()

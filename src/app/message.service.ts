@@ -20,6 +20,14 @@ export class MessageService {
       )
   }
 
+  addMessage(message: Message): Observable<Message> {
+    return this.http.post<Message>(this.messageUrl, message)
+      .pipe(
+        tap((message: Message) => console.log(`posted message ${message.id}`)),
+        catchError(this.handleError<Message>('addMessage'))
+      )
+  }
+
   private messageUrl = 'https://gschool-api.herokuapp.com/api/messages'
     //<T> defines a generic and captures the passed in type
   private handleError<T> (operation = 'operation', result?: T) {

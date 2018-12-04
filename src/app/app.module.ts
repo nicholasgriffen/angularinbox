@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core'
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component'
-import { MessagesComponent } from './messages/messages.component' 
+import { MessagesComponent } from './messages/messages.component';
+import { ComposeMessageComponent } from './compose-message/compose-message.component' 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MessagesComponent
+    MessagesComponent,
+    ComposeMessageComponent
   ],
   imports: [
     BrowserModule,

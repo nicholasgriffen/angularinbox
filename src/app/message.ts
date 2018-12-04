@@ -4,4 +4,5 @@ export class Message {
     read: boolean 
     starred: boolean 
     labels: string[]
+    id: number
 }
