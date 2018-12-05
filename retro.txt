@@ -1,0 +1,6 @@
+Went well: 
+Gained a thorough understanding of Angular and made some functioning software
+
+Room to improve: 
+Blend reading documentation with actually getting things done, 
+I spent large chunks of time reading docs and going through examples 
