@@ -1,7 +1,11 @@
+<h2>Compose Message</h2>
+<app-compose-message [messages]="messages"></app-compose-message>
 <h2>Inbox</h2>
 <ul>
   <li *ngFor="let message of messages">
+    <label>starred
+    <input type="checkbox" [checked]="message.starred" />
+  </label>
     {{message.subject}}
   </li>
 </ul>
-<app-compose-message [messages]="messages"></app-compose-message>

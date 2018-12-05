@@ -16,7 +16,14 @@ export class MessageService {
     return this.http.get<Message[]>(this.messageUrl)
       .pipe(
         tap(_ => console.log('got messages')),
-        catchError(this.handleError('getMessages', []))
+        catchError(this.handleError('getMessages', [{
+          subject: 'wow',
+          body: 'indeed',
+          read: false,
+          starred: true,
+          id: 1,
+          labels: ['dev']
+        }]))
       )
   }
 
@@ -24,7 +31,14 @@ export class MessageService {
     return this.http.post<Message>(this.messageUrl, message)
       .pipe(
         tap((message: Message) => console.log(`posted message ${message.id}`)),
-        catchError(this.handleError<Message>('addMessage'))
+        catchError(this.handleError<Message>('addMessage', {
+            subject: message.subject,
+            body: message.body,
+            read: false,
+            starred: true,
+            id: 1,
+            labels: ['dev']
+          }))
       )
   }
 

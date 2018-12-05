@@ -6,7 +6,7 @@
     <input #messageBody type="text" /> <!--ref variable-->
 </label>
   <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add({subject: messageSubject, body: messageBody}); messageBody.value=''; messageSubject.value = ''">
+  <button (click)="add({subject: messageSubject.value, body: messageBody.value}); messageBody.value=''; messageSubject.value = ''">
       add
   </button>
 </div>
